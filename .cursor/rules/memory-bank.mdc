@@ -1,0 +1,142 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Nash Festival Memories - Project Intelligence
+
+## Project Personality & Context
+
+### Polish-English Hybrid
+- **Login Interface**: Uses Polish text ("Hasło dostępowe", "Zaloguj", "Logowanie...")
+- **Application UI**: English throughout the rest of the application
+- **Target Audience**: Likely Polish speakers living in/visiting Nashville area
+- **Community Focus**: Password-protected suggests curated, tight-knit community
+
+### Nashville Music Scene Focus
+- **Geographic Constraint**: Explicitly focused on Nashville area festivals only
+- **Cultural Significance**: Preserving Music City's festival heritage
+- **Community Scale**: Claims coverage of "25+ festivals" suggests established scene knowledge
+- **Authentic Experiences**: Emphasizes genuine memories over promotional content
+
+## Technical Preferences & Patterns
+
+### Modern Next.js Architecture
+- **Server Components First**: Default to server components, minimal client-side JavaScript
+- **App Router**: Fully committed to Next.js 15 App Router pattern
+- **TypeScript Strict**: Zero tolerance for `any` types, full type safety
+- **Co-located Files**: Components organized with index.tsx, actions.ts, types.ts together
+
+### Authentication Philosophy
+- **Community Curation**: Single password protects quality over convenience
+- **Simplicity Over Features**: Basic auth chosen over complex user management
+- **Security Conscious**: Environment variables, server-side validation, CSRF protection
+
+### UI/UX Standards
+- **DaisyUI Components**: Prefer semantic component classes over custom Tailwind
+- **Mobile-First**: All layouts designed for festival-goer phone usage
+- **Accessibility**: Proper ARIA labels, form associations, semantic HTML required
+- **Polish Language Support**: UI must handle both languages gracefully
+
+## Development Workflow Insights
+
+### Code Quality Requirements
+- **Format Before Commit**: Prettier and ESLint must pass
+- **Type Safety**: TypeScript errors are deployment blockers
+- **Component Patterns**: Follow established login-form structure for new features
+- **Server Actions**: Form handling through server actions, not API routes
+
+### File Organization Logic
+```
+Feature-based organization:
+components/feature-name/
+├── index.tsx      # Main component export
+├── actions.ts     # Server actions
+├── types.ts       # TypeScript interfaces
+└── utils.ts       # Helper functions (when needed)
+```
+
+### Environment & Deployment
+- **PNPM Preferred**: Use PNPM for faster installs and better caching
+- **Turbopack Development**: Always use `--turbopack` flag for dev server
+- **Environment Variables**: All secrets in `.env.local`, never commit
+
+## Critical Implementation Paths
+
+### Database Integration (Future)
+- **PostgreSQL + Prisma**: Recommended stack for scalability
+- **Migration Strategy**: Plan for user accounts, memories, festivals, media tables
+- **Image Storage**: Separate from database - use cloud storage (S3/Cloudinary)
+
+### Photo Upload System (Next Priority)
+- **Security First**: File type validation, size limits, virus scanning
+- **Performance**: Image optimization pipeline required for mobile users
+- **Storage**: Cloud storage with CDN for global festival attendee access
+- **User Experience**: Drag-and-drop, progress indicators, mobile camera integration
+
+### User Management Evolution
+- **Phase 1**: Individual accounts while keeping password entry
+- **Phase 2**: User profiles with memory ownership
+- **Phase 3**: Social features and community interactions
+- **Preserve**: Community curation aspect through invitation/approval system
+
+## Known Challenges & Solutions
+
+### Technical Challenges
+- **NextAuth Beta**: Monitor for breaking changes, have rollback plan
+- **React 19**: Latest version may have library compatibility issues
+- **Mobile Performance**: Photo-heavy content needs optimization strategy
+- **Offline Support**: Festival venues often have poor connectivity
+
+### Product Challenges
+- **Content Seeding**: Need strategy to populate initial memories
+- **Community Growth**: Balance between exclusivity and growth
+- **Content Moderation**: Manual review vs. automated systems
+- **Festival Partnerships**: Potential integration with official festival data
+
+## User Experience Insights
+
+### Festival-Goer Behavior
+- **Mobile-Centric**: Users primarily on phones during festivals
+- **Quick Sharing**: Want to share moments immediately, not after events
+- **Memory Discovery**: Enjoy finding photos others took of same performances
+- **Artist Discovery**: Use community content to find new music
+
+### Community Dynamics
+- **Quality Over Quantity**: Password protection suggests preference for engaged users
+- **Authentic Content**: Real experiences valued over professional photography
+- **Local Knowledge**: Nashville insiders have valuable context for events
+- **Seasonal Activity**: Usage likely spikes during festival seasons
+
+## Success Patterns
+
+### What Works Well
+- **Simple Authentication**: Single password removes friction while maintaining quality
+- **Modern Stack**: Next.js 15 + TypeScript provides excellent developer experience
+- **Component Organization**: Feature-based structure scales well
+- **Mobile Design**: DaisyUI components work excellently on mobile
+
+### What to Preserve
+- **Community Focus**: Don't lose sight of curated community aspect
+- **Nashville Identity**: Maintain local flavor and cultural connection
+- **Simplicity**: Resist feature creep that complicates core photo sharing
+- **Performance**: Keep mobile experience fast and responsive
+
+## Evolution Strategy
+
+### Near-term (1-3 months)
+- Focus on core photo sharing and memory creation
+- Establish data patterns that support future social features
+- Build for the active Nashville festival community
+
+### Medium-term (3-12 months)
+- Expand community features based on user feedback
+- Integrate with Nashville festival calendar/data
+- Consider festival photographer partnerships
+
+### Long-term (1+ years)
+- Explore expansion to other music cities
+- Advanced discovery features and recommendation engine
+- Potential mobile app for enhanced festival experience
+
+This project has strong foundations and clear community purpose. Maintain the balance between technical excellence and authentic community value.
