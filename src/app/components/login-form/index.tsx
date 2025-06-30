@@ -3,7 +3,7 @@
 import { login } from '@/app/components/login-form/actions';
 import { FC, useActionState, useId } from 'react';
 
-export const Login: FC = () => {
+export const LoginForm: FC = () => {
   const [state, action, pending] = useActionState(login, undefined);
   const id = useId();
 

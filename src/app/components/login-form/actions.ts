@@ -1,6 +1,6 @@
 'use server';
 
-import { FormState, LoginForm } from '@/app/components/login-form/types';
+import { FormState, LoginFormData } from '@/app/components/login-form/types';
 import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
 
@@ -12,7 +12,7 @@ export const login = async (
     password: formData.get('password'),
   };
 
-  const parsed = LoginForm.safeParse(data);
+  const parsed = LoginFormData.safeParse(data);
   if (!parsed.success) {
     return {
       errors: parsed.error.flatten().fieldErrors,

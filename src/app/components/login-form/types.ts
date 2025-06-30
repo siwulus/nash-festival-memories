@@ -9,7 +9,7 @@ export type FormState =
     }
   | undefined;
 
-export const LoginForm = z.object({
+export const LoginFormData = z.object({
   password: z.string().min(1, 'Hasło jest wymagane'),
 });
-export type LoginForm = z.infer<typeof LoginForm>;
+export type LoginFormData = z.infer<typeof LoginFormData>;
