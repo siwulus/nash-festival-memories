@@ -8,12 +8,10 @@ export const LoginForm: FC = () => {
   const id = useId();
 
   return (
-    <div className='card w-full max-w-md bg-base-100 shadow-xl'>
-      <div className='card-body'>
-        <h2 className='card-title text-2xl font-bold text-center mb-6'>
-          Nash Sokół
-        </h2>
+    <div className='mx-auto max-w-md p-2 space-y-6'>
+      <h2>Nash Sokół</h2>
 
+      <div>
         {/* Error Message Display */}
         {state?.message && (
           <div className='alert alert-error' role='alert'>
@@ -34,9 +32,11 @@ export const LoginForm: FC = () => {
         )}
 
         <form action={action} role='form' aria-label='Login form' noValidate>
-          <div className='form-control w-full'>
+          <fieldset className='fieldset bg-base-200 border-base-300 rounded-box border p-4'>
+            <legend className='fieldset-legend'>Logowanie</legend>
+
             <label className='label' htmlFor={`${id}-password`}>
-              <span className='label-text font-medium'>
+              <span>
                 Hasło dostępowe
                 <span className='text-error ml-1' aria-hidden='true'>
                   *
@@ -56,9 +56,7 @@ export const LoginForm: FC = () => {
               aria-describedby={
                 !!state?.errors ? `${id}-password-error` : undefined
               }
-              className={`input input-bordered w-full ${
-                !!state?.errors ? 'input-error' : ''
-              }`}
+              className={`input w-full ${!!state?.errors ? 'input-error' : ''}`}
             />
 
             {!!state?.errors?.password && (
@@ -73,25 +71,25 @@ export const LoginForm: FC = () => {
                 </span>
               </label>
             )}
-          </div>
 
-          <div className='form-control mt-6'>
-            <button
-              type='submit'
-              disabled={pending}
-              aria-describedby={pending ? `${id}-loading` : undefined}
-              className='btn btn-primary w-full'
-            >
-              {pending ? (
-                <>
-                  <span className='loading loading-spinner loading-sm'></span>
-                  Logowanie...
-                </>
-              ) : (
-                'Zaloguj'
-              )}
-            </button>
-          </div>
+            <div className='mt-6'>
+              <button
+                type='submit'
+                disabled={pending}
+                aria-describedby={pending ? `${id}-loading` : undefined}
+                className='btn btn-primary w-full'
+              >
+                {pending ? (
+                  <>
+                    <span className='loading loading-spinner loading-sm'></span>
+                    Logowanie...
+                  </>
+                ) : (
+                  'Zaloguj'
+                )}
+              </button>
+            </div>
+          </fieldset>
         </form>
       </div>
     </div>
