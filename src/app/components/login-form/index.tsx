@@ -11,7 +11,7 @@ export const LoginForm: FC = () => {
     <div className='card w-full max-w-md bg-base-100 shadow-xl'>
       <div className='card-body'>
         <h2 className='card-title text-2xl font-bold text-center mb-6'>
-          Nash Festival Memories
+          Nash Sokół
         </h2>
 
         {/* Error Message Display */}
