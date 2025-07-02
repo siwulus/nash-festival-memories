@@ -2,6 +2,7 @@
 
 import { login } from '@/app/components/login-form/actions';
 import { FC, useActionState, useId } from 'react';
+import { AlertIcon } from '../icons/AlertIcon';
 
 export const LoginForm: FC = () => {
   const [state, action, pending] = useActionState(login, undefined);
@@ -15,18 +16,7 @@ export const LoginForm: FC = () => {
         {/* Error Message Display */}
         {state?.message && (
           <div className='alert alert-error' role='alert'>
-            <svg
-              className='stroke-current shrink-0 h-6 w-6'
-              fill='none'
-              viewBox='0 0 24 24'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z'
-              />
-            </svg>
+            <AlertIcon />
             <span>{state.message}</span>
           </div>
         )}

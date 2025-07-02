@@ -3,6 +3,7 @@
 import { useActionState } from 'react';
 import { processPhotoCollection } from './actions';
 import { DescriptionForm } from './description-form';
+import { PhotoUpload } from './photo-upload';
 import { PhotoCollectionFormState } from './types';
 const initialState: PhotoCollectionFormState = {
   success: false,
@@ -26,7 +27,11 @@ const PhotoCollectionForm = () => {
 
   return (
     <div>
-      <DescriptionForm onSubmit={action} state={state} pending={pending} />
+      {state.success ? (
+        <PhotoUpload uploadUrl={state.response?.uploadUrl!} />
+      ) : (
+        <DescriptionForm onSubmit={action} state={state} pending={pending} />
+      )}
     </div>
   );
 };

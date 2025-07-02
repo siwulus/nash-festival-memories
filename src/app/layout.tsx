@@ -15,7 +15,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang='pl'>
-      <body className='prose mx-auto'>
+      <body className='prose mx-auto my-16'>
         <SessionProvider>{children}</SessionProvider>
       </body>
     </html>

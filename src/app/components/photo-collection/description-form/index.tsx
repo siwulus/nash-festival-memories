@@ -186,7 +186,7 @@ export const DescriptionForm = ({
             <button
               type='submit'
               disabled={pending}
-              className={`btn btn-primary min-w-32 ${pending ? 'loading' : ''}`}
+              className={`btn btn-primary min-w-64`}
             >
               {pending ? (
                 <>

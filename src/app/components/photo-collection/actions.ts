@@ -70,7 +70,7 @@ export async function processPhotoCollection(
       // Clear form data on success (optional - you could keep it if needed)
       formData: validationResult.data,
       response: {
-        uploadUrl: '/upload/photos', // Mock URL - replace with actual implementation
+        uploadUrl: 'https://www.dropbox.com/request/XXXXXXXXX', // Mock URL - replace with actual implementation
       },
     };
   } catch (error) {
