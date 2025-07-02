@@ -16,19 +16,18 @@ const initialState: PhotoCollectionFormState = {
       description: [],
     },
   },
-  formData: undefined,
 };
 
 const PhotoCollectionForm = () => {
-  const [state, action, pending] = useActionState(
+  const [{ success, response }, action, pending] = useActionState(
     processPhotoCollection,
     initialState
   );
 
   return (
     <div>
-      {state.success ? (
-        <PhotoUpload uploadUrl={state.response?.uploadUrl!} />
+      {success && response ? (
+        <PhotoUpload uploadUrl={response.uploadUrl} />
       ) : (
         <DescriptionForm onSubmit={action} state={state} pending={pending} />
       )}

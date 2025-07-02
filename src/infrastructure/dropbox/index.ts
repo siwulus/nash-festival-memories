@@ -8,7 +8,7 @@ import {
   UploadDataArgs,
 } from '../../core/boundary/storage';
 
-class Dropbox {
+export class Dropbox {
   constructor(
     private readonly refreshToken: string,
     private readonly clientId: string,
