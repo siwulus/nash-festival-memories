@@ -1,5 +1,5 @@
+import PhotoCollection from '@/app/components/photo-collection';
 import { FC } from 'react';
-import PhotoCollection from './components/photo-collection';
 
 const PhotoCollectionPage: FC = () => {
   return (

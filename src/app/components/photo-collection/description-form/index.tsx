@@ -1,7 +1,7 @@
 'use client';
 
+import { PhotoCollectionFormState } from '@/app/components/photo-collection/types';
 import { isEmpty } from 'ramda';
-import { PhotoCollectionFormState } from '../types';
 
 type DescriptionFormProps = {
   onSubmit: (data: FormData) => void;

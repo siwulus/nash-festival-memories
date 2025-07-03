@@ -16,10 +16,38 @@ const eslintConfig = [
     plugins: {
       prettier: (await import('eslint-plugin-prettier')).default,
     },
+    settings: {
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.json',
+        },
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+      },
+    },
     rules: {
       'prettier/prettier': 'error',
       'arrow-body-style': 'off',
       'prefer-arrow-callback': 'off',
+      // Disable relative parent imports rule as it conflicts with @/ absolute imports
+      'import/no-relative-parent-imports': 'off',
+      // Prefer absolute imports over relative ones for cleaner code
+      'import/prefer-default-export': 'off',
+      // Custom rule to enforce @/ imports for src directory
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['../*', './*'],
+              message:
+                'Use absolute imports with @/ instead of relative imports',
+            },
+          ],
+        },
+      ],
     },
   },
 ];

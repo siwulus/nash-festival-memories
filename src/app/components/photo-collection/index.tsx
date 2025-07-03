@@ -1,10 +1,10 @@
 'use client';
 
+import { processPhotoCollection } from '@/app/components/photo-collection/actions';
+import { DescriptionForm } from '@/app/components/photo-collection/description-form';
+import { PhotoUpload } from '@/app/components/photo-collection/photo-upload';
+import { PhotoCollectionFormState } from '@/app/components/photo-collection/types';
 import { useActionState } from 'react';
-import { processPhotoCollection } from './actions';
-import { DescriptionForm } from './description-form';
-import { PhotoUpload } from './photo-upload';
-import { PhotoCollectionFormState } from './types';
 const initialState: PhotoCollectionFormState = {
   success: false,
   validationErrors: {

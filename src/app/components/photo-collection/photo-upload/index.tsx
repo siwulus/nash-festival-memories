@@ -1,9 +1,9 @@
 'use client';
 
+import { CopiedToClipboardIcon } from '@/app/components/icons/CopiedToClipboardIcon';
+import { CopyToClipboardIcon } from '@/app/components/icons/CopyToClipboardIcon';
+import { OpenInNewWindowIcon } from '@/app/components/icons/OpenInNewWindowIcon';
 import { FC, useId, useState } from 'react';
-import { CopiedToClipboardIcon } from '../../icons/CopiedToClipboardIcon';
-import { CopyToClipboardIcon } from '../../icons/CopyToClipboardIcon';
-import { OpenInNewWindowIcon } from '../../icons/OpenInNewWindowIcon';
 
 type PhotoUploadProps = {
   uploadUrl: string;

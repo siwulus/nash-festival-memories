@@ -1,6 +1,6 @@
+import '@/app/globals.css';
 import type { Metadata } from 'next';
 import { SessionProvider } from 'next-auth/react';
-import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Nash Festival Memories',

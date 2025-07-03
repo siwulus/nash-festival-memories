@@ -1,8 +1,8 @@
 'use client';
 
+import { AlertIcon } from '@/app/components/icons/AlertIcon';
 import { login } from '@/app/components/login-form/actions';
 import { FC, useActionState, useId } from 'react';
-import { AlertIcon } from '../icons/AlertIcon';
 
 export const LoginForm: FC = () => {
   const [state, action, pending] = useActionState(login, undefined);

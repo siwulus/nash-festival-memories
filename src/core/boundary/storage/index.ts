@@ -1,5 +1,12 @@
 import { z } from 'zod';
 
+export interface FileStorage {
+  createFileRequest(args: CreateFileRequestArgs): Promise<FileRequest>;
+  listFileRequests(): Promise<FileRequest[]>;
+  updateFileRequest(args: UpdateFileRequestArgs): Promise<FileRequest>;
+  uploadData(args: UploadDataArgs, content: Buffer): Promise<FileMetadata>;
+}
+
 export const CreateFileRequestArgs = z.object({
   destination: z.string(),
   description: z.string().optional(),
